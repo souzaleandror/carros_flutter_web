@@ -1,8 +1,11 @@
-
 import 'package:carros_flutter_web/app_model.dart';
 import 'package:carros_flutter_web/colors.dart';
 import 'package:carros_flutter_web/pages/carros/carros_page.dart';
+import 'package:carros_flutter_web/pages/chart/charts_page.dart';
+import 'package:carros_flutter_web/pages/count_page.dart';
 import 'package:carros_flutter_web/pages/default_page.dart';
+import 'package:carros_flutter_web/pages/info_page.dart';
+import 'package:carros_flutter_web/pages/upload/upload_page.dart';
 import 'package:carros_flutter_web/pages/usuarios_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -33,6 +36,10 @@ class _MenuState extends State<Menu> {
     menus.add(ItemMenu("Home", FontAwesomeIcons.home, DefaultPage()));
     menus.add(ItemMenu("Carros", FontAwesomeIcons.car, CarrosPage()));
     menus.add(ItemMenu("Usuários", FontAwesomeIcons.user, UsuariosPage()));
+    menus.add(ItemMenu("Upload", FontAwesomeIcons.upload, UploadPage()));
+    menus.add(ItemMenu("Count", FontAwesomeIcons.list, CountPage()));
+    menus.add(ItemMenu("Chart", FontAwesomeIcons.chartLine, ChartsPage()));
+    menus.add(ItemMenu("Info Page", FontAwesomeIcons.info, InfoPage()));
   }
 
   @override
@@ -40,14 +47,13 @@ class _MenuState extends State<Menu> {
     return ListView.builder(
         itemCount: menus.length,
         itemBuilder: (context, index) {
-      ItemMenu item = menus[index];
+          ItemMenu item = menus[index];
 
-      return _itemMenu(item);
-    });
+          return _itemMenu(item);
+        });
   }
 
   _itemMenu(ItemMenu item) {
-
     return Material(
       color: item.selected ? Theme.of(context).hoverColor : Colors.transparent,
       child: InkWell(
@@ -62,8 +68,16 @@ class _MenuState extends State<Menu> {
           });
         },
         child: ListTile(
-          leading: Icon(item.icon,color: AppColors.blue,),
-          title: Text(item.title, style: TextStyle(fontWeight: item.selected ? FontWeight.bold : FontWeight.normal),),
+          leading: Icon(
+            item.icon,
+            color: AppColors.blue,
+          ),
+          title: Text(
+            item.title,
+            style: TextStyle(
+                fontWeight:
+                    item.selected ? FontWeight.bold : FontWeight.normal),
+          ),
         ),
       ),
     );

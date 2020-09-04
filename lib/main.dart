@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers:[
+      providers: [
         ChangeNotifierProvider(
           builder: (context) => AppModel(),
         )
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
 
   _theme() {
     return ThemeData(
+      fontFamily: "Mansalva",
       primaryColor: AppColors.blue,
       scaffoldBackgroundColor: Colors.white,
       splashColor: Colors.blue,
