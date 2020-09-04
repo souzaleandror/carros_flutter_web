@@ -2,9 +2,8 @@ import 'package:carros_flutter_web/constants.dart';
 import 'package:carros_flutter_web/web/header.dart';
 import 'package:carros_flutter_web/web/menu.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import 'app_model.dart';
+import 'web/body.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -63,11 +62,11 @@ class _HomePageState extends State<HomePage> {
       color: Colors.yellow,
       child: Container(
         width: showMenu ? sized.width - (menuWidth + 16) : sized.width,
-        //child: Body(),
-        child: Consumer<AppModel>(builder: (_, app, __) {
-          print("Consumer");
-          return app.page;
-        }),
+        child: Body(),
+        // child: Consumer<AppModel>(builder: (_, app, __) {
+        //   print("Consumer");
+        //   return app.pages;
+        // }),
       ),
     );
   }

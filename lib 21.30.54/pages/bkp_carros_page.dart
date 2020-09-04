@@ -1,12 +1,11 @@
-
 import 'package:flutter/material.dart';
 
-class UsuariosPage extends StatefulWidget {
+class BkpCarrosPage extends StatefulWidget {
   @override
-  _UsuariosPageState createState() => _UsuariosPageState();
+  _BkpCarrosPageState createState() => _BkpCarrosPageState();
 }
 
-class _UsuariosPageState extends State<UsuariosPage> {
+class _BkpCarrosPageState extends State<BkpCarrosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +15,7 @@ class _UsuariosPageState extends State<UsuariosPage> {
 
   _body() {
     return Center(
-      child: Text("Usuarios"),
+      child: Text('Carros'),
     );
   }
 }
